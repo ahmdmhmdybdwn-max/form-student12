@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fORM(STUDENT)</title>
+       <script src="print.js" defer></script>
+
+</head>
+<body>
+    <center>
+
+  <fieldset>
+    <legend align="center">Form Student</legend>
+    <br>
+ <form>
+<div>
+    <label for="name"> Student Name:</label>
+<input id="name" type="text" placeholder="Full Name" required>
+</div>
+<br>
+<div>
+<label for="Num">National ID Number: </label>
+<input id="num" type="number" placeholder="Id Information" required>
+</div>
+<br>
+<div>
+    <label for="mail"> Email Address:</label>
+<input type="email" name="email" id="mail" placeholder="Email@gmail.com" required>
+
+</div>
+<br>
+<div>
+<label>Gender::</label>
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">other</label>
+</div>
+<br>
+<div>
+    <label for="Year">Year:</label>
+    <input id="Year" type="number" placeholder="Year" min="2000" max="2030">
+</div>
+<br>
+
+  <div>
+        <label for="date">date of birth</label>
+           <input id="date" type="date" required>  
+     </div>
+     <br>
+     <div>
+        <label for="term">Semester:</label>
+<select name="semester" id="term" >
+   
+       <option value="spring">spring</option> 
+  
+
+
+    <option value="Fall ">Fall </option>
+
+<option value="Summer">Summer </option>
+
+</select>
+     </div>
+
+<br>
+ 
+
+<br>
+<form>
+  <input type="file" id="file-input" accept="image/*" />
+  <div id="preview-container"></div>
+</form>
+
+<script>
+  const fileInput = document.getElementById('file-input');
+const previewContainer = document.getElementById('preview-container');
+
+fileInput.addEventListener('change', (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    previewContainer.innerHTML = `<img src="${e.target.result}" style="max-width: 200px;" />`;
+  };
+  reader.readAsDataURL(file);
+});
+
+
+
+</script>
+
+
+
+<br><br>
+   <div>
+    <button type="button" onclick="printStudentData()">
+    Print Student Data
+</button>
+  </div>
+
+ 
+    </form>
+    
+  </fieldset>
+   
+ 
+  </center>
+
+</body>
+</html>
